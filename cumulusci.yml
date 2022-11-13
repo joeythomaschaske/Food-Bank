@@ -4,6 +4,7 @@ project:
   package:
     name: Food-bank
     api_version: "55.0"
+    namespace: lastpass
   git:
     default_branch: "main"
   source_format: sfdx
