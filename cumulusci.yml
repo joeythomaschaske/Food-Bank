@@ -1,25 +1,35 @@
-minimum_cumulusci_version: '3.68.1'
+minimum_cumulusci_version: "3.68.1"
 project:
+  name: Food-bank
+  package:
     name: Food-bank
-    package:
-        name: Food-bank
-        api_version: '55.0'
-    git:
-        default_branch: 'main'
-    source_format: sfdx
+    api_version: "55.0"
+  git:
+    default_branch: "main"
+  source_format: sfdx
 
 tasks:
-    robot:
-        options:
-            suites: robot/Food-bank/tests
-            options:
-                outputdir: robot/Food-bank/results
+  robot:
+    options:
+      suites: robot/Food-bank/tests
+      options:
+        outputdir: robot/Food-bank/results
 
-    robot_testdoc:
-        options:
-            path: robot/Food-bank/tests
-            output: robot/Food-bank/doc/Food-bank_tests.html
+  robot_testdoc:
+    options:
+      path: robot/Food-bank/tests
+      output: robot/Food-bank/doc/Food-bank_tests.html
 
-    run_tests:
-        options:
-            required_org_code_coverage_percent: 75
+  run_tests:
+    options:
+      required_org_code_coverage_percent: 75
+
+flows:
+  config_qa:
+    steps:
+      3:
+        task: load_dataset
+  config_dev:
+    steps:
+      3:
+        task: load_dataset
