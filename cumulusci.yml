@@ -34,3 +34,12 @@ flows:
     steps:
       3:
         task: load_dataset
+
+plans:
+  install:
+    slug: Food
+    title: Install
+    tier: primary
+    steps:
+      1:
+        flow: install_prod
